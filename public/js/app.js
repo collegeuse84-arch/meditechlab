@@ -19,7 +19,7 @@
     const { day, mins } = ist()
     const workday = day !== 'Sun'
     const open = workday && mins >= 480 && mins < 1200
-    let text = open ? 'Open now · until 8 PM' : workday && mins < 480 ? 'Closed · opens 8 AM' : day === 'Sat' || day === 'Sun' ? 'Closed · opens Mon 8 AM' : 'Closed · opens 8 AM'
+    let text = open ? 'Open now · until 8 PM' : workday && mins < 480 ? 'Closed · opens 8 AM' : day === 'Sat' || day === 'Sun' ? 'Closed · opens Mon 8 AM' : 'Closed · opens 7:30 AM'
     $$('[data-open-status]').forEach((el) => { el.textContent = text; el.classList.toggle('open', open) })
   }
   status(); setInterval(status, 60000)
