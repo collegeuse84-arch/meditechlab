@@ -9,7 +9,7 @@ export const SITE = {
   phone2: '86260 67552',
   phone2Tel: '+918626067552',
   whatsapp: '919370591948',
-  hoursText: 'Monday to Saturday, 8:00 AM – 8:00 PM',
+  hoursText: 'Monday to Saturday, 8:00 AM – 7:30 PM',
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Meditech+Laboratory+Bhanudas+Complex+Mahad',
   url: process.env.URL || 'https://sprightly-bonbon-45ef6f.netlify.app',
 }
