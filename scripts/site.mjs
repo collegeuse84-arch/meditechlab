@@ -24,7 +24,7 @@ SITE.schema = {
   image: `${SITE.url}/images/flyer.jpg`,
   telephone: [SITE.phone1Tel, SITE.phone2Tel],
   address: { '@type': 'PostalAddress', streetAddress: 'Bhanudas Complex', addressLocality: 'Mahad', addressRegion: 'Maharashtra', addressCountry: 'IN' },
-  openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: '08:00', closes: '20:00' }],
+  openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: '08:00', closes: '19:30' }],
   medicalSpecialty: ['Pathology', 'Haematology', 'Biochemistry', 'Microbiology'],
 }
 
