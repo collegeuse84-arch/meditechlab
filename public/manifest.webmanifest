@@ -1,0 +1,23 @@
+{
+  "name": "Meditech Laboratory, Mahad",
+  "short_name": "Meditech Lab",
+  "description": "Test directory, preparation guide and booking for Meditech Laboratory, Mahad.",
+  "id": "/",
+  "start_url": "/?source=app",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f3f7fc",
+  "theme_color": "#0b1f8f",
+  "categories": ["medical", "health"],
+  "lang": "en-IN",
+  "icons": [
+    { "src": "/images/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/images/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "Find a test", "url": "/tests", "icons": [{ "src": "/images/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Book a test", "url": "/book", "icons": [{ "src": "/images/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Preparation guide", "url": "/preparation", "icons": [{ "src": "/images/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

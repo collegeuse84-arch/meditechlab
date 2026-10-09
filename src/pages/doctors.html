@@ -1,0 +1,75 @@
+<!--{"title":"For Doctors & Clinics | Meditech Laboratory, Mahad","desc":"Information for doctors, clinics and hospitals referring patients to Meditech Laboratory, Mahad: test menu, sample requirements, requisitions and the referral laboratory network.","nav":"doctors","path":"/doctors"}-->
+<div class="phead">
+  <div class="wrap">
+    <div class="crumbs"><a href="/">Home</a> / For doctors &amp; clinics</div>
+    <h1>For doctors &amp; clinics</h1>
+    <p class="lead">Practical information for clinicians referring patients to Meditech Laboratory — test menu, sample requirements, requisitions and specialised testing.</p>
+  </div>
+</div>
+
+<section class="wrap" style="padding-bottom:20px">
+  <div class="grid g3">
+    <div class="card"><div class="ico">{{icon:flask}}</div><h3>Test menu with sample type</h3><p class="muted">The <a href="/tests">test directory</a> lists the usual specimen (EDTA, citrate, fluoride, serum, urine, tissue) and patient preparation for each test.</p></div>
+    <div class="card"><div class="ico red">{{icon:print}}</div><h3>Printable requisition</h3><p class="muted">Select tests in the directory, add the patient and your name, and print a requisition with space for clinical details and your stamp.</p></div>
+    <div class="card"><div class="ico">{{icon:whatsapp}}</div><h3>Direct communication</h3><p class="muted">Reach the lab on <a href="tel:{{phone1Tel}}">{{phone1}}</a> or <a href="tel:{{phone2Tel}}">{{phone2}}</a> — phone or WhatsApp — for queries about samples, add-on tests and reports.</p></div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:40px">
+  <div class="wrap grid g2" style="gap:32px;align-items:start">
+    <div>
+      <span class="eyebrow">Specimen quick reference</span>
+      <h2>Common sample requirements</h2>
+      <div class="card" style="padding:0;overflow:auto">
+        <table class="hours" style="min-width:460px">
+          <thead><tr><td style="padding:12px 18px"><b>Specimen</b></td><td style="padding:12px 18px;text-align:left"><b>Typical tests</b></td></tr></thead>
+          <tbody>
+            <tr><td style="padding:10px 18px">EDTA whole blood</td><td style="padding:10px 18px;text-align:left;font-weight:400">CBC, ESR*, HbA1c, blood group, retic, G6PD, Hb electrophoresis, HLA B27, malaria</td></tr>
+            <tr><td style="padding:10px 18px">Sodium citrate</td><td style="padding:10px 18px;text-align:left;font-weight:400">PT-INR, APTT (correct fill volume essential)</td></tr>
+            <tr><td style="padding:10px 18px">Fluoride</td><td style="padding:10px 18px;text-align:left;font-weight:400">Glucose — fasting, PP, random, GTT</td></tr>
+            <tr><td style="padding:10px 18px">Serum</td><td style="padding:10px 18px;text-align:left;font-weight:400">LFT, RFT, lipids, thyroid, hormones, vitamins, serology, tumour markers, cardiac markers</td></tr>
+            <tr><td style="padding:10px 18px">Sterile container</td><td style="padding:10px 18px;text-align:left;font-weight:400">Urine, stool, semen and culture specimens</td></tr>
+            <tr><td style="padding:10px 18px">10% neutral buffered formalin</td><td style="padding:10px 18px;text-align:left;font-weight:400">Histopathology (about 10× tissue volume)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="font-size:.88rem;margin-top:10px">*ESR on EDTA or citrated blood as per lab method. Please call the lab to confirm requirements for any specialised or send-out test.</p>
+
+      <h3 style="margin-top:28px">Helpful details on the requisition</h3>
+      <ul class="prep" style="padding-left:20px">
+        <li>Patient name, age, sex and mobile number</li>
+        <li>Clinical details or provisional diagnosis</li>
+        <li>Relevant medicines — anticoagulants, thyroxine, steroids, antibiotics</li>
+        <li>Gestational age and scan details for antenatal screening</li>
+        <li>Collection time for timed samples (PP, GTT, cortisol)</li>
+      </ul>
+
+      <h3 style="margin-top:28px" id="referral">Referral laboratory network</h3>
+      <p class="muted">Specialised and esoteric tests that are not performed in-house are referred to our partner reference laboratories:</p>
+      <div class="refs" style="padding:0"><span>Metropolis</span><span>Agilus</span><span>Suburban</span><span>Bhide</span><span>Medgenome</span></div>
+      <p class="muted" style="margin-top:12px">Call us to check availability, sample requirements and expected report time for referred tests.</p>
+    </div>
+
+    <form class="card form" name="doctor-enquiry" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="doctor-enquiry">
+      <input type="hidden" name="subject" value="New doctor / clinic enquiry">
+      <p class="hp"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <div><span class="eyebrow">Work with us</span><h2 style="font-size:1.5rem">Doctor &amp; clinic enquiry</h2><p class="muted" style="margin:0">Referral tie-ups, test availability or a sample query — we respond during lab hours.</p></div>
+      <div class="field"><label for="d-name">Doctor name <span class="req">*</span></label><input id="d-name" name="doctor_name" required autocomplete="name" placeholder="Dr."></div>
+      <div class="row">
+        <div class="field"><label for="d-spec">Speciality</label><input id="d-spec" name="speciality" placeholder="e.g. General physician"></div>
+        <div class="field"><label for="d-clinic">Clinic / hospital</label><input id="d-clinic" name="clinic" autocomplete="organization"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="d-phone">Mobile <span class="req">*</span></label><input id="d-phone" name="phone" type="tel" inputmode="tel" required pattern="[+0-9 \-]{10,15}" autocomplete="tel"></div>
+        <div class="field"><label for="d-email">Email</label><input id="d-email" name="email" type="email" autocomplete="email"></div>
+      </div>
+      <div class="field"><label for="d-type">Enquiry type</label><select id="d-type" name="enquiry_type">
+        <option>Referral tie-up</option><option>Test availability</option><option>Sample / collection query</option><option>Report query</option><option>Other</option>
+      </select></div>
+      <div class="field"><label for="d-msg">Message <span class="req">*</span></label><textarea id="d-msg" name="message" required></textarea><p class="hint">Please do not include patient-identifying details here; call the lab for patient-specific matters.</p></div>
+      <label class="check"><input type="checkbox" name="consent" value="Yes" required><span>I agree to be contacted about this enquiry. <span class="req">*</span></span></label>
+      <button class="btn navy block" type="submit">Send enquiry</button>
+    </form>
+  </div>
+</section>

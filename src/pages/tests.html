@@ -1,0 +1,47 @@
+<!--{"title":"Test Directory | Meditech Laboratory, Mahad","desc":"Search around 100 laboratory tests at Meditech Laboratory, Mahad, with sample type and preparation for each. Build your test list and book on WhatsApp or print a requisition.","nav":"tests","path":"/tests","scripts":["tests.js"]}-->
+<div class="phead no-print">
+  <div class="wrap">
+    <div class="crumbs"><a href="/">Home</a> / Test directory</div>
+    <h1>Test directory</h1>
+    <p class="lead">Every test with its usual sample and preparation. Tick tests to build your list, then book on WhatsApp, send a booking request, or print a requisition.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="tools">
+    <div class="search">{{icon:search}}<label for="q" class="sr">Search tests</label><input id="q" type="search" placeholder="Search a test, e.g. HbA1c, thyroid, vitamin D, dengue" autocomplete="off" enterkeyhint="search"></div>
+    <div class="chips" id="chips" role="toolbar" aria-label="Filter by category"></div>
+    <span class="count" id="count" aria-live="polite"></span>
+  </div>
+
+  <div class="layout">
+    <div id="list"></div>
+
+    <aside class="basket" id="print" aria-labelledby="basket-h">
+      <div class="print-only">
+        <div class="req-head"><img src="/images/logo.png" alt=""><div><b style="font-size:16pt">Meditech Laboratory</b><br>{{address}} · {{phone1}} / {{phone2}}<br>Test requisition</div></div>
+        <div class="req-grid">
+          <div>Patient: <b data-p="pn"></b></div><div>Age / Sex: <b data-p="pa"></b></div>
+          <div>Referring doctor: <b data-p="dr"></b></div><div>Date: <b data-p="date"></b></div>
+          <div style="grid-column:1/-1">Clinical details / provisional diagnosis:</div>
+        </div>
+        <b>Tests requested:</b>
+      </div>
+      <h3 id="basket-h">My test list <span class="pill" id="cn">0</span></h3>
+      <ul class="sel" id="sel"></ul>
+      <div class="form no-print" style="gap:10px;margin-bottom:14px">
+        <div class="field"><label for="pn">Patient name</label><input id="pn" autocomplete="name"></div>
+        <div class="row" style="gap:10px"><div class="field"><label for="pa">Age / Sex</label><input id="pa" placeholder="e.g. 45 / F"></div><div class="field"><label for="dr">Doctor</label><input id="dr" placeholder="Optional"></div></div>
+      </div>
+      <div class="btns">
+        <button class="btn wa block" id="send">{{icon:whatsapp}}Send on WhatsApp</button>
+        <a class="btn block" href="/book" id="book">{{icon:calendar}}Booking request form</a>
+        <button class="btn ghost block" id="printBtn">{{icon:print}}Print requisition</button>
+        <button class="btn ghost sm" id="clear">Clear list</button>
+      </div>
+      <p class="muted" style="font-size:.85rem;margin:12px 0 0">This is an enquiry. The lab confirms timing, preparation and sample collection with you.</p>
+      <div class="print-only sign"><span>Doctor's signature &amp; stamp</span><span>Lab use</span></div>
+    </aside>
+  </div>
+</div>
+<a class="btn fab" href="#print" id="fab" hidden>{{icon:clipboard}}My list (<span data-cart-count>0</span>)</a>

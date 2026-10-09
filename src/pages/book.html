@@ -1,0 +1,84 @@
+<!--{"title":"Book a Test | Meditech Laboratory, Mahad","desc":"Send a booking request to Meditech Laboratory, Mahad. Choose your tests, preferred date and time. The lab confirms your slot and preparation.","nav":"book","path":"/book","scripts":["book.js"]}-->
+<div class="phead">
+  <div class="wrap">
+    <div class="crumbs"><a href="/">Home</a> / Book a test</div>
+    <h1>Book a test</h1>
+    <p class="lead">Send us your request and we call or WhatsApp you to confirm the slot and any preparation. Prefer chatting? <a href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener">Message us on WhatsApp</a>.</p>
+  </div>
+</div>
+
+<section class="wrap" style="padding:8px 20px 64px">
+  <div class="layout" style="padding:0">
+    <form class="card form" name="booking" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" id="bookingForm">
+      <input type="hidden" name="form-name" value="booking">
+      <input type="hidden" name="subject" value="New test booking request">
+      <p class="hp"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+      <h2 style="font-size:1.4rem">Patient details</h2>
+      <div class="field"><label for="b-name">Patient full name <span class="req">*</span></label><input id="b-name" name="patient_name" required autocomplete="name"></div>
+      <div class="row">
+        <div class="field"><label for="b-phone">Mobile number <span class="req">*</span></label><input id="b-phone" name="phone" type="tel" inputmode="tel" required pattern="[+0-9 \-]{10,15}" autocomplete="tel" placeholder="10-digit mobile"><p class="hint">We confirm your booking on this number.</p></div>
+        <div class="field"><label for="b-age">Age (years) <span class="req">*</span></label><input id="b-age" name="age" type="number" inputmode="numeric" min="0" max="120" required></div>
+      </div>
+      <div class="field"><fieldset><legend>Sex <span class="req">*</span></legend><div class="radios">
+        <label><input type="radio" name="sex" value="Female" required>Female</label>
+        <label><input type="radio" name="sex" value="Male">Male</label>
+        <label><input type="radio" name="sex" value="Other">Other</label>
+      </div></fieldset><p class="hint">Some reference ranges differ by age and sex.</p></div>
+
+      <h2 style="font-size:1.4rem;margin-top:10px">Tests</h2>
+      <div class="field">
+        <label for="b-tests">Tests required <span class="req">*</span></label>
+        <textarea id="b-tests" name="tests" required placeholder="e.g. CBC, HbA1c, TSH — or write “as per prescription”"></textarea>
+        <div class="chosen" id="chosen"></div>
+        <p class="hint">Filled in from your <a href="/tests">test list</a>. You can edit it.</p>
+      </div>
+      <div class="field"><label for="b-doc">Referring doctor</label><input id="b-doc" name="referring_doctor" placeholder="Optional"></div>
+
+      <h2 style="font-size:1.4rem;margin-top:10px">Visit</h2>
+      <div class="row">
+        <div class="field"><label for="b-date">Preferred date <span class="req">*</span></label><input id="b-date" name="preferred_date" type="date" required><p class="hint" id="date-hint">Monday to Saturday.</p></div>
+        <div class="field"><label for="b-time">Preferred time <span class="req">*</span></label><select id="b-time" name="preferred_time" required>
+          <option value="">Choose a time</option>
+          <option>8 – 10 AM (best for fasting tests)</option>
+          <option>10 AM – 12 PM</option>
+          <option>12 – 3 PM</option>
+          <option>3 – 6 PM</option>
+          <option>6 – 8 PM</option>
+        </select></div>
+      </div>
+      <div class="field"><fieldset><legend>Sample collection</legend><div class="radios">
+        <label><input type="radio" name="collection" value="Visit the lab" checked>I will visit the lab</label>
+        <label><input type="radio" name="collection" value="Ask about home collection">Ask me about home collection</label>
+      </div></fieldset><p class="hint">Home collection depends on the test and availability; we confirm when we call.</p></div>
+      <div class="field" id="addr-wrap" hidden><label for="b-addr">Address for collection</label><textarea id="b-addr" name="address" rows="2" style="min-height:80px"></textarea></div>
+      <div class="field"><label for="b-notes">Anything we should know?</label><textarea id="b-notes" name="notes" placeholder="e.g. pregnant (weeks), on blood thinners, diabetic, child patient, mobility needs"></textarea></div>
+
+      <label class="check"><input type="checkbox" name="consent" value="Yes" required><span>I agree that Meditech Laboratory may store these details to contact me about this booking, as described in the <a href="/privacy">privacy notice</a>. <span class="req">*</span></span></label>
+      <div class="form-msg err" id="b-err" hidden></div>
+      <button class="btn block" type="submit">{{icon:calendar}}Send booking request</button>
+      <p class="muted" style="font-size:.85rem;margin:0">This is a request, not a confirmed appointment. For urgent tests, call <a href="tel:{{phone1Tel}}">{{phone1}}</a>.</p>
+    </form>
+
+    <aside class="aside-card">
+      <div class="card" style="margin-bottom:16px">
+        <h3>Bring with you</h3>
+        <ul class="prep" style="margin:0;padding-left:20px">
+          <li>Doctor's prescription or requisition</li>
+          <li>A photo ID</li>
+          <li>Previous reports, if your doctor wants a comparison</li>
+          <li>List of your current medicines</li>
+        </ul>
+      </div>
+      <div class="note"><p><b>Fasting tests?</b> Book an early-morning slot. Fast for at least 8 hours — water is allowed. <a href="/preparation">Full preparation guide</a></p></div>
+      <div class="card" style="margin-top:16px">
+        <h3>Prefer to talk?</h3>
+        <div class="btns" style="flex-direction:column">
+          <a class="btn wa block" href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener">{{icon:whatsapp}}WhatsApp</a>
+          <a class="btn ghost block" href="tel:{{phone1Tel}}">{{icon:phone}}{{phone1}}</a>
+          <a class="btn ghost block" href="tel:{{phone2Tel}}">{{icon:phone}}{{phone2}}</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>

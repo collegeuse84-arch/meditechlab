@@ -1,0 +1,53 @@
+<!--{"title":"Contact & Location | Meditech Laboratory, Mahad","desc":"Visit Meditech Laboratory at Bhanudas Complex, Mahad. Call or WhatsApp 9370591948 / 8626067552. Open Monday to Saturday, 8 AM to 8 PM.","nav":"contact","path":"/contact","scripts":["contact.js"]}-->
+<div class="phead">
+  <div class="wrap">
+    <div class="crumbs"><a href="/">Home</a> / Contact</div>
+    <h1>Visit or contact us</h1>
+    <p class="lead">Walk in during lab hours, call, or send us a WhatsApp message.</p>
+  </div>
+</div>
+
+<section class="wrap" style="padding-bottom:64px">
+  <div class="grid g2" style="gap:28px;align-items:start">
+    <div class="grid" style="gap:18px">
+      <div class="card">
+        <ul class="info">
+          <li><span class="ico">{{icon:pin}}</span><div><b>Address</b>Meditech Laboratory<br>{{address}}<br><a href="{{mapsUrl}}" target="_blank" rel="noopener">Get directions in Google Maps</a></div></li>
+          <li><span class="ico">{{icon:phone}}</span><div><b>Phone</b><a href="tel:{{phone1Tel}}">{{phone1}}</a> · <a href="tel:{{phone2Tel}}">{{phone2}}</a></div></li>
+          <li><span class="ico">{{icon:whatsapp}}</span><div><b>WhatsApp</b><a href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener">Chat on {{phone1}}</a></div></li>
+        </ul>
+        <div class="btns" style="margin-top:18px"><a class="btn" href="tel:{{phone1Tel}}">{{icon:phone}}Call now</a><a class="btn wa" href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener">{{icon:whatsapp}}WhatsApp</a><a class="btn ghost" href="{{mapsUrl}}" target="_blank" rel="noopener">{{icon:pin}}Directions</a></div>
+      </div>
+      <div class="card">
+        <h3>Opening hours <span class="status" data-open-status style="display:inline-block;margin-left:6px"></span></h3>
+        <table class="hours" id="hours">
+          <tr data-d="Mon"><td>Monday</td><td>8:00 AM – 8:00 PM</td></tr>
+          <tr data-d="Tue"><td>Tuesday</td><td>8:00 AM – 8:00 PM</td></tr>
+          <tr data-d="Wed"><td>Wednesday</td><td>8:00 AM – 8:00 PM</td></tr>
+          <tr data-d="Thu"><td>Thursday</td><td>8:00 AM – 8:00 PM</td></tr>
+          <tr data-d="Fri"><td>Friday</td><td>8:00 AM – 8:00 PM</td></tr>
+          <tr data-d="Sat"><td>Saturday</td><td>8:00 AM – 8:00 PM</td></tr>
+          <tr data-d="Sun"><td>Sunday</td><td>Closed</td></tr>
+        </table>
+        <p class="muted" style="font-size:.88rem;margin:12px 0 0">Fasting tests are best done in the morning. Hours may differ on public holidays — please call ahead.</p>
+      </div>
+    </div>
+
+    <form class="card form" name="contact" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <input type="hidden" name="subject" value="New website message">
+      <p class="hp"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <div><h2 style="font-size:1.5rem">Send us a message</h2><p class="muted" style="margin:0">Questions, feedback or report queries. We reply during lab hours.</p></div>
+      <div class="field"><label for="c-name">Your name <span class="req">*</span></label><input id="c-name" name="name" required autocomplete="name"></div>
+      <div class="row">
+        <div class="field"><label for="c-phone">Mobile <span class="req">*</span></label><input id="c-phone" name="phone" type="tel" inputmode="tel" required pattern="[+0-9 \-]{10,15}" autocomplete="tel"></div>
+        <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email"></div>
+      </div>
+      <div class="field"><label for="c-topic">Topic</label><select id="c-topic" name="topic"><option>General question</option><option>Report query</option><option>Test availability</option><option>Feedback</option></select></div>
+      <div class="field"><label for="c-msg">Message <span class="req">*</span></label><textarea id="c-msg" name="message" required></textarea></div>
+      <label class="check"><input type="checkbox" name="consent" value="Yes" required><span>I agree that Meditech Laboratory may store these details to reply to me, as described in the <a href="/privacy">privacy notice</a>. <span class="req">*</span></span></label>
+      <button class="btn block" type="submit">Send message</button>
+      <p class="muted" style="font-size:.85rem;margin:0">For medical emergencies, go to the nearest hospital or call 108.</p>
+    </form>
+  </div>
+</section>
