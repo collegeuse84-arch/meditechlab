@@ -27,7 +27,7 @@ const header = (nav) => `
 <header class="top"><div class="wrap">
   <a class="brand" href="/" aria-label="${SITE.name} home"><img src="/images/logo.png" alt="" width="44" height="44"><span><b>${SITE.name}</b><small>Diagnostic Centre · ${SITE.town}</small></span></a>
   <nav class="nav" aria-label="Main">${NAV.map((n) => `<a href="${n.href}"${n.id === nav ? ' aria-current="page"' : ''}>${n.label}</a>`).join('')}</nav>
-  <span class="status" data-open-status>Mon–Sat 8 AM–8 PM</span>
+  <span class="status" data-open-status>Mon–Sat 8 AM–7:30 PM</span>
   <a class="btn sm call" href="tel:${SITE.phone1Tel}">${icon('phone')}Call</a>
 </div></header>`
 
